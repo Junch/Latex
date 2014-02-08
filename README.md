@@ -1,4 +1,3 @@
-README
 
 在Windows操作系统下请首先安装[CTex套件](http://www.ctex.org/CTeXDownload)
 
