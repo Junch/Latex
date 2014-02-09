@@ -1,0 +1,242 @@
+% !TEX program = xelatex
+% !Mode:: "TeX:UTF-8"
+\documentclass[twoside,11pt,a4paper]{article}
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+\fancyhf{}
+\setlength{\headwidth}{\linewidth}
+\rfoot{\small\thepage/2}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\pagestyle{plain}
+\usepackage[left=2cm,right=2cm,top=1.9cm,bottom=1.9cm]{geometry}%------------设置页边距
+\usepackage[no-math]{fontspec}%--------------------------------------------------提供字体选择命令
+\usepackage{xunicode}%-----------------------------------------------------------提供 Unicode 字符宏
+\usepackage{xltxtra}%------------------------------------------------------------提供了针对XeTeX的改进并且加入了XeTeX的LOGO
+\usepackage[slantfont,boldfont]{xeCJK}%------------------------------------------使用 xeCJK 宏包
+\usepackage{amsmath}
+\usepackage{mathspec}%-----------------------------------------------------------数学字体宏包
+\usepackage{graphics}
+\usepackage{marvosym}
+%\usepackage{titleps}%-----------------------------------------------------------设置页眉,页脚
+\usepackage[svgnames,table]{xcolor}
+\usepackage{array,delarray,longtable,colortbl,multirow,makecell,booktabs}
+\usepackage{tabu}
+\usepackage{enumitem}
+\setitemize{leftmargin=1em,itemsep=0ex,partopsep=-1ex,parsep=0ex,topsep=-1ex}
+\setenumerate{leftmargin=1em,leftmargin=1.2em,itemsep=0ex,partopsep=-1ex,parsep=0ex,topsep=-1ex}
+%--------------------------------- 设置中文字体 ---------------------------------%
+\setCJKmainfont{Adobe Fangsong Std}%设置正文为宋体
+\setCJKmonofont{Adobe Song Std}%设置等距字体
+\setCJKsansfont{Adobe Kaiti Std}%设置无衬线字体
+\setCJKfamilyfont{hei}{Adobe Heiti Std}
+%--------------------------------- 设置中文字体 ---------------------------------%
+%--------------------------------- 设置英文字体 ---------------------------------%
+\setmainfont[Mapping=tex-text]{TeX Gyre Pagella}%英文衬线字体
+\setsansfont[Mapping=tex-text]{Trebuchet MS}%英文无衬线字体
+\setmonofont[Mapping=tex-text]{Courier New}%英文等宽字体
+%--------------------------------- 设置英文字体 ---------------------------------%
+%--------------------------------- 设置数学字体 ---------------------------------%
+%\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
+%--------------------------------- 设置数学字体 ---------------------------------%
+\punctstyle{kaiming}%开明式标点格式
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headwidth}{\textwidth}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\small\thepage/2}
+
+
+\centering
+\begin{tabular}{cr}
+  \begin{tabu}to0.7\linewidth{X[l]X[r]}
+    \raisebox{-2.5em}{\Huge Chin\TeX} & \small\sf
+    \begin{tabu}spread0pt{X[r]}
+       江苏 徐州 \\
+       中国矿业大学\\
+       理学院应用数学\\
+       \Mobilefone\  10086100861\\
+       \Letter\  xiaodaxialiang@163.com
+    \end{tabu}
+  \end{tabu}
+  &
+  \raisebox{-2.1em}{\includegraphics[width=2cm]{picture.jpg}}\\
+\end{tabular}
+
+\bigskip
+{\color{orange}\rule{0.98\linewidth}{0.8ex}}
+
+\vspace{-2.3ex}
+\tabulinesep=0mm
+\begin{longtabu}to\linewidth{X[j]}
+
+
+
+  \tabulinesep=2mm
+  \extrarowsep=1mm
+  \taburowcolors[1]{teal!50 .. teal!50}
+  \begin{tabu}to\linewidth{X[-1,c]|[1pt,orange] X[6,j]}
+    {\CJKfamily{hei} 基本情况} & \\
+    \taburowcolors{GhostWhite .. GhostWhite}
+                               & 性别: 男, 民族: 汉, 出生年月: 1900 年 10 月, 政治面貌: 群众\\
+  \taburowcolors{teal!50 .. teal!50}
+    {\CJKfamily{hei} 教育背景} & \bf 中国矿业大学\quad 理学院\quad 运筹与控制\hfill 2006.09 -- 2010.06\\
+    \taburowcolors{GhostWhite .. GhostWhite}
+      & \setlength{\baselineskip}{17pt}
+        理学{\bf 学士}\quad {\bf 专业前 10\%}
+
+        主修课程: 数学分析, 常微分方程, 微分方程定性理论, 高等代数, 概率论与数理统
+        计, 近代概率论, 实变函数与泛函分析, 计算方法, 算法分析, 等\\
+      & \cellcolor{teal!50}\bf 中国矿业大学\quad 理学院\quad 应用数学\hfill 2010.09 -- 2013.06\\
+      & \setlength{\baselineskip}{17pt}
+        理学{\bf 硕士}\quad {\bf 专业前 1\%}\quad 方向: 随机分析,
+        倒向随机微分方程
+
+        主修课程: 测度与概率论, 随机过程与随机分析, 随机微分方程, 倒向随机微分方程,
+        非线性泛函分析, 近世代数, 现代分析基础\\
+  \taburowcolors{teal!50 .. teal!50}
+    {\CJKfamily{hei} 学术背景} & \bf 本科阶段: 参与大学生创新训练计划\\
+    \taburowcolors{GhostWhite .. GhostWhite}
+       & \setlength{\baselineskip}{17pt}
+         银行排队系统的随机分析 \hfill  2007 -- 2008
+
+         频率分配问题的理论与算法研究 \hfill 2008 -- 2009\\
+       & \cellcolor{teal!50} \bf 研究生阶段: 参与科研项目\\
+       & \setlength{\baselineskip}{17pt}\vspace{-1.1ex}
+         \begin{itemize}
+           \item $g$ 关于 $y$ 弱单调且广义一般增长的 BSDE 解的存在唯一性 \hfill 2012.01 -- 2014.12
+
+                 项目来源: 国家自然科学基金委
+
+                 主要负责理论研究和资料收集
+           \item 终端时间无限多维 BSDE 的 $L^p$ $(p\geq 1)$ 解存在惟一性 \hfill 2012.06 -- 2013.06
+
+                 项目来源: 中央高校基本科研业务费专项资金
+         \end{itemize}\vspace{-1.1ex}\\
+      & \cellcolor{teal!50} \bf 参加学术报告\\
+      & \setlength{\baselineskip}{17pt}
+        参加 2011 年江苏省概率统计年会第十次学术年会, 
+        与众多学者关于 BSDE 解的存在唯一性理论进行交流\\
+      & \cellcolor{teal!50} \bf 已发表及投稿论文\\
+      & \setlength{\baselineskip}{17pt}\vspace{-1.1ex}
+         \begin{enumerate}
+           \item One-dimensional BSDEs with monotonic,
+                 H\"older continuous and integrable parameters. 华东师范大学学报,
+                 2012, 1:130 -- 137.
+           \item An existence and uniqueness result of
+                 $L^1$ solutions to multidimensional BSDEs with a finite and an
+                 infinite time interval. 应用数学, 将于 2012 年第 4 期发表.
+           \item 无穷时间终端 BSDE 递归迭代序列的收敛性及解
+                 存在唯一性. 云南大学学报 (自然科学版), 2012 年 3 月投稿, 已接收.
+           \item $L^p$ $(p\geq 1)$ solutions of multidimensional
+                 BSDEs with a finite and an infinite time interval and monotonicity
+                 generators. Stochastics and Dynamics, 2012 年 4 月投稿, 在审.
+         \end{enumerate}\vspace{-1.1ex}
+  \end{tabu}\\
+
+  \tabulinesep=2mm
+  \extrarowsep=1mm
+  \taburowcolors[1]{GhostWhite .. GhostWhite}
+  \begin{tabu}to\linewidth{X[-1,c]|[1pt,orange] X[6,j]}
+    {\color{GhostWhite}\CJKfamily{hei} 学术背景}
+      & \setlength{\baselineskip}{17pt}\vspace{-1.1ex}
+        \begin{enumerate}
+          \setcounter{enumi}{4}
+          \item 随机变量本性上 (下) 确界与范数的关系. 烟台
+                大学学报 (自然科学与工程版), 2012 年 3 月投稿, 已接收.
+          \item On the essential supremum of a random variable
+                with an infinite range. Archiv der Mathematik, 2010 年 10 月投稿, 在审.
+        \end{enumerate}\vspace{-1.1ex}\\
+  \end{tabu}\\
+
+  \tabulinesep=2mm
+  \extrarowsep=1mm
+  \taburowcolors[1]{teal!50 .. teal!50}
+  \begin{tabu}to\linewidth{X[-1,c]|[1pt,orange]X[2.5,j]|[1pt,orange]X[4,j]}
+    {\CJKfamily{hei} 奖励荣誉} & \bf 奖学金  & \bf 其他奖励\\
+    \taburowcolors{GhostWhite .. GhostWhite}
+      & \setlength{\baselineskip}{17pt}
+        2011 年\quad 研究生一等奖学金
+
+        2010 年\quad 研究生一等奖学金
+
+        2009 年\quad 国家励志奖学金
+
+        2008 年\quad 院级优秀学生
+
+        2007 年\quad 校级特等奖学金
+      & \setlength{\baselineskip}{17pt}
+        2011 年\quad 第六届全国研究生数学建模竞赛一等奖
+
+        2011 年\quad 理学院科技创新论坛二等奖
+
+        2011 年\quad 第八届苏北数学建模联赛二等奖
+
+        2010 年\quad 优秀毕业生
+
+        2009 年\quad 征文一等奖, 各种奖不赘述
+        \\
+  \end{tabu} \\
+
+  \tabulinesep=2mm
+  \extrarowsep=1mm
+  \taburowcolors[1]{teal!50 .. teal!50}
+  \begin{tabu}to\linewidth{X[-1,c]|[1pt,orange] X[6,j]}
+    {\CJKfamily{hei} 工作经历} & \bf 兼职教师 \hfill 2011.09 -- 2012.06\\
+      \taburowcolors{GhostWhite .. GhostWhite}
+      & \setlength{\baselineskip}{17pt}
+        教授学生线性代数与概率论, 微积分, 初等数论等基础课程
+
+        备课, 写教案, 评阅作业, 参与试卷出题, 阅卷\\
+      & \cellcolor{teal!50} \bf 研究生助管 \hfill 2010.04 -- 2012.07\\
+      & \setlength{\baselineskip}{17pt}
+        增强了独立工作能力
+
+        增强了协调组织能力\\
+
+  \taburowcolors{teal!50 .. teal!50}
+    {\CJKfamily{hei} 实践活动} & \bf 社团的各种主席学生会的各种部长 \hfill 2007.05 -- 2010.03\\
+    \taburowcolors{GhostWhite .. GhostWhite}
+      & \setlength{\baselineskip}{17pt}\vspace{-1.1ex}
+        \begin{itemize}
+          \item 完成很多大型活动, 例如毕业晚会
+
+          \item 编辑排版各种资料
+
+          \item 组织社团内部各种活动, 各种策划, bla bla
+
+          \item 经历了从底层到高层的艰辛并且付出自己的努力, 凭实力获得了老师的一致赞许
+
+          \item 做事缜密, 富有责任心, 抗压能力强, 提升了组织策划、人际交往能力, 
+                增强了办公软件使用水平
+        \end{itemize}\vspace{-1.1ex}
+        \\
+      & \cellcolor{teal!50} \bf 其他实践活动\\
+      & 班长, 研究生会宣传部部长, 研究生会副主席, 等\\
+    \taburowcolors{teal!50 .. teal!50}
+    {\CJKfamily{hei} 资质技能} & \bf 专业技能 \\
+    \taburowcolors{GhostWhite .. GhostWhite}
+      & \setlength{\baselineskip}{16pt}
+        了解 Matlab, Mathematic 数学软件, 能够处理常见数学问题
+
+        熟练使用科技排版软件 \LaTeX, 制作中国矿业大学本科毕业论文模板, 硕博毕业
+        论文 \LaTeX{} 模板 cumtthesis.cls (还在修改)\\
+      & \cellcolor{teal!50} \bf IT 技能\\
+      & \setlength{\baselineskip}{16pt}
+        通过计算机二级 (VB), 哥的三级还没过, 能够熟练操作 office 办公软件, 善于编辑排版做幻灯片, 基
+        本掌握 AutoCAD 制图功能, 了解 Photoshop 图像优化处理\\
+      & \cellcolor{teal!50} \bf 英语技能\\
+      & 通过 CET-6, 具有良好的英语阅读和写作能力\\
+    \taburowcolors{teal!50 .. teal!50}
+    {\CJKfamily{hei} 兴趣爱好} &  \\
+    \taburowcolors{GhostWhite .. GhostWhite}
+      & 读书, 看电影, 乒乓球, \LaTeX\\
+  \end{tabu}
+\end{longtabu}
+\vspace{-2.11em}
+{\color{orange}\rule{0.98\linewidth}{0.8ex}}
+\end{document} 

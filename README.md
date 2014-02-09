@@ -5,4 +5,14 @@
 
 - 建议用xelatex编译这些文件。
 
-- 这些文件采用UTF8编码，便于用TeXWorks编辑。
+- 这些文件采用UTF-8编码，便于用TeXWorks编辑。
+
+####收录的三个简历，其原始depot如下，对他们的作者表示感谢：
+
+- cv1: [潘培][cv1]
+- cv2: [党凡][cv2]
+- cv3: [unknown][cv3]
+
+[cv1]: https://github.com/xidianpanpei/resume-source
+[cv2]: https://github.com/terro/CV
+[cv3]: http://www.latexstudio.net/a-resumedesign-using-tabu-package
