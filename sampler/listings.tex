@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\begin{document}
+
+\lstset{
+    numbers=left,
+    numberstyle=\scriptsize,
+    keywordstyle=\color{blue!70}\bfseries,
+    basicstyle=\ttfamily,
+    commentstyle=\ttfamily\color{red!50!green!50!blue!50},
+    showstringspaces=false,
+    frame=shadowbox,
+    rulesepcolor=\color{red!20!green!20!blue!20}
+}
+
+\begin{lstlisting}[language=C]
+int main(int argc, char ** argv)
+{
+    // comment here ...
+    printf("Hello world!\n");
+
+    return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=python]
+def problem_25():
+    # comment here ...
+    a,b,c = 1,1,2
+    term = 3
+    while(c < 10**999):
+        a = b
+        b = c
+        c = a + b
+        term += 1
+    print (term)
+\end{lstlisting}
+
+\end{document}
