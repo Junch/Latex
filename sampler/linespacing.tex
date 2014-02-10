@@ -1,0 +1,36 @@
+\documentclass{ctexart}
+\usepackage{setspace}
+
+\begin{document}
+
+% http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting
+To change line spacing in the whole document use the command  $\backslash$linespread covered in Text Formatting.
+
+To change line spacing in specific environments do the following:
+\begin{enumerate}
+\item Add $\backslash$usepackage\{setspace\} to the document preamble.
+\item This then provides the following environments to use within your document:
+    \begin{itemize}
+      \item doublespacing - all lines are double spaced.
+      \item onehalfspacing - line spacing set to one-and-half spacing.
+      \item singlespacing - normal line spacing.
+    \end{itemize}
+\item To change line spacing to custom values, use the command $\backslash$setstretch\{baselinestretch\} in the preamble to change line spacing for the whole document or use the environment $\backslash$begin\{spacing\}\{2.5\} ... $\backslash$end\{spacing\} to change the line spacing to whatever is greater, the document-wide or environment-wide one.
+\end{enumerate}
+
+\begin{spacing}{2.5}
+2.5倍行间距
+
+2.5倍行间距
+\end{spacing}
+
+1.5倍行间距
+
+1.5倍行间距
+
+\singlespacing
+1.0倍行间距
+
+1.0倍行间距
+
+\end{document}
