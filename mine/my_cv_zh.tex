@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% moderncv 主题
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% 字符编码
+\usepackage[noindent,UTF8]{ctex}
+
+% 调整页面
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=1cm}  %设置 上、左、下、右 页边距
+%\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}
+
+% Refine quote 
+\newcommand*{\myquote}[2]{%
+   \quote{\itshape #1 \\ \scshape \footnotesize #2}}
+
+% 个人信息
+\firstname{周}
+\familyname{瑜}
+\title{简历}
+\myquote{Write clean code}{}
+\mobile{+86~13361970595}
+\email{junc76@gmail.com}
+\homepage{junch.github.io}
+\nopagenumbers{}  
+
+%----------------------------------------------------------------------------------
+%            内容
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{工作背景}
+\cventry{2005.6-现在}{Autodesk公司}{PSEB部门}{高级软件开发工程师}{}{}
+\cventry{\footnotesize{2003.10-2004.3}}{华为技术有限公司}{BMS固网网管部IP项目组}{软件开发工程师}{}{}
+
+\section{项目经历}
+\cventry{2013.4-至今}{AutoCAD}{In cavas UI}{C++}{}{
+\begin{enumerate}
+\item LMG-156: User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command
+\item LMG-157: User sees cursor been replaced when using PAN/3DPAN command
+\item LMG-457: CommandPreview Benchmark
+\item LMG-464: when creating a line/Mline/Pline/Spline, user can preview the exact properties during creation. (Part 
+of the work)
+\end{enumerate}
+}
+
+\cventry{2011.4-2012.11}{AutoCAD}{Visual style}{C++ WPF}{}{
+\begin{enumerate}
+\item Maintain the predefined visual styles, such as adding new visual styles and updating the property values.
+\item Maintain the visual style swatchs on VSM.
+\item Add new ribbon controls related to visual styles.
+\item Add new controls for the visual styles on the tool palette.
+\item Fix bugs related to VSM, roundtrip and per-obj visual style.
+\item In-canvas UI enhancement: Cursor badge, pan/3dpan and zoom/3dzoom.
+\end{enumerate}
+}
+
+\vspace*{0.2\baselineskip}
+
+\cventry{2006.10-2010.11}{AutoCAD MEP}{Tool based UI}{C++ MFC COM/ATL}{}{将传统对话框界面改成基于Palellate的界面，代码大部分重构。使用了 MFC，COM/ATL，ActiveX 等 Windows 平台下传统的组件开发技术。担任技术负责人。}
+
+\vspace*{0.2\baselineskip}
+
+\cventry{2003.10-2004.3}{网管软件N2000}{C++, ACE, SQL Server}{}{}{后台采用ACE作为底层通信模块。跨平台，同一套 C++代码可以分别在 Windows 和 Solaris上（Linux 也可以）编译链接运行；多线程；在本项目中我大约编写了 8000 行的 C++代码，处理了 160 个问题单。}
+
+\section{教育背景}
+\cventry{2002-2005}{计算机科学与技术硕士}{武汉理工大学}{}{}{}
+\cventry{1993-1997}{建筑工程学士}{汕头大学}{}{}{}
+
+\section{编程技能}
+\cventry{编程语言}{ C = C++ > Python > Java = C\# }{}{}{}{}
+\cventry{单元测试}{GoogleTest > Cpputest}{}{}{}{}
+
+\end{document}
