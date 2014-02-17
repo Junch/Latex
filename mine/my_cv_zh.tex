@@ -6,6 +6,7 @@
 
 % 字符编码
 \usepackage[noindent,UTF8]{ctex}
+\usepackage{amssymb}
 
 % 调整页面
 \usepackage{geometry}
@@ -16,6 +17,10 @@
 % Refine quote 
 \newcommand*{\myquote}[2]{%
    \quote{\itshape #1 \\ \scshape \footnotesize #2}}
+
+\usepackage[originalcommands]{ragged2e}
+\renewcommand*{\cvcomputer}[4]{%
+  \cvdoubleitem{\textbf{#1}}{\small\raggedright#2}{\textbf{#3}}{\small\raggedright#4}}
 
 % 个人信息
 \firstname{周}
@@ -86,12 +91,12 @@ Visual Style是AutoCAD提供的显示效果，比如Wireframe或者Realistic等
 \cventry{2002-2005}{计算机科学与技术硕士}{武汉理工大学}{}{}{}
 \cventry{1993-1997}{建筑工程学士}{汕头大学}{}{}{}
 
-\section{编程技能}
-\cventry{编程语言}{ C = C++ > Python > Java = C\# }{}{}{}{}
-\cventry{单元测试}{GoogleTest > Cpputest}{}{}{}{}
-\cventry{其　　他}{Mac OS X, Ubuntu}{XCode, VS, Sublime Text}{Git, P4}{Github}{CMake}
-
-\section{语言技能}
-\cventry{英语}{CET-6}{}{}{}{}
-
+\section{相关技能}
+\cvcomputer{语言}{C/C++, Python, Objective C, C\#}
+           {测试}{GoogleTest, Cpputest}
+\cvcomputer{SCM}{Perforce, Git}
+           {编辑}{XCode, VS, Sublime Text}
+\cvcomputer{OS}{Windows, Mac OS X, Ubuntu}
+           {其他}{CMake, Markdown, \LaTeX{}}
+\cvcomputer{英语}{CET-6}{}{}
 \end{document}
