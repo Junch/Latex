@@ -2,7 +2,7 @@
 
 % moderncv 主题
 \moderncvstyle{classic}
-\moderncvcolor{blue}
+\moderncvcolor{orange}
 
 % 字符编码
 \usepackage[noindent,UTF8]{ctex}
@@ -15,8 +15,8 @@
 %\setlength{\hintscolumnwidth}{3cm}
 
 % Refine quote 
-\newcommand*{\myquote}[2]{%
-   \quote{\itshape #1 \\ \scshape \footnotesize #2}}
+%\newcommand*{\myquote}[2]{%
+%   \quote{\itshape #1 \\ \scshape \footnotesize #2}}
 
 \usepackage[originalcommands]{ragged2e}
 \renewcommand*{\cvcomputer}[4]{%
@@ -25,12 +25,13 @@
 % 个人信息
 \firstname{周}
 \familyname{瑜}
-\title{简历}
-\myquote{Write clean code}{}
+\title{Write clean code}
+%\myquote{Write clean code}{}
 \mobile{+86~13361970595}
 \email{junc76@gmail.com}
 \homepage{junch.github.io}
 \photo[64pt][0pt]{portrait.png}  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度
+\quote{\footnotesize Last updated: \today}
 \nopagenumbers{}  
 
 %----------------------------------------------------------------------------------
@@ -39,14 +40,14 @@
 \begin{document}
 \maketitle
 
-\section{工作背景}
+\section{\heiti 工作背景}
 \cventry{2005.6-现在}{Autodesk公司}{PSEB部门}{高级软件开发工程师}{}{}
 \cventry{\footnotesize{2003.10-2004.3}}{华为技术有限公司}{BMS固网网管部IP项目组}{软件开发工程师}{}{}
 
 \vspace*{0.3\baselineskip}
 
-\section{项目经历}
-\cventry{2013.4-2013.11}{AutoCAD}{In cavas UI}{C++}{}{
+\section{\heiti 项目经历}
+\cventry{2013.4-2013.11}{AutoCAD - In cavas UI}{C++}{}{}{
 %\begin{enumerate}
 %\item LMG-156: User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command
 %\item LMG-157: User sees cursor been replaced when using PAN/3DPAN command
@@ -56,15 +57,15 @@
 %\end{enumerate}
 更新绘图区的UI，让用户获得更佳的交互体验。
 \begin{itemize}
-\item 更新ZOOM/3DZOOM, PAN/3DPAN命令的cursor badge。
-\item 创建line/mline/pline/spline时候，做到所见即所得。
+\item 更新ZOOM/3DZOOM, PAN/3DPAN命令的Cursor Badge。
+\item 创建Line/MLine/Pline/Spline时候，做到所见即所得。
 \item 测试CommandPreview功能对性能的影响。
 \end{itemize}
 }
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2011.4-2012.11}{AutoCAD}{Visual Style}{C++ WPF}{}{
+\cventry{2011.4-2012.11}{AutoCAD - Visual Style}{C++, WPF}{}{}{
 %\begin{enumerate}
 %\item Maintain the predefined visual styles, such as adding new visual styles and updating the property values.
 %\item Maintain the visual style swatchs on VSM.
@@ -82,17 +83,19 @@ Visual Style是AutoCAD提供的显示效果，比如Wireframe或者Realistic等�
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2006.10-2010.11}{AutoCAD MEP}{Tool based UI}{C++ MFC COM/ATL}{}{将传统对话框界面改成基于Palellate的界面，代码大部分重构。使用了 MFC，COM/ATL，ActiveX 等 Windows 平台下传统的组件开发技术。担任技术负责人。}
+\cventry{2006.10-2010.11}{AutoCAD MEP - Tool based UI}{C++, MFC, COM/ATL}{}{}
+{将传统对话框界面改成基于Palette的界面，代码大部分重构。使用了 MFC，COM/ATL，ActiveX 等 Windows 平台下传统的组件开发技术。担任技术负责人。}
 
 \vspace*{0.3\baselineskip}
 
 \cventry{2003.10-2004.3}{网管软件N2000}{C++, ACE, SQL Server}{}{}{后台采用ACE作为底层通信模块。跨平台，同一套 C++代码可以分别在 Windows 和 Solaris上（Linux 也可以）编译链接运行；多线程；在本项目中我大约编写了 8000 行的 C++代码，处理了 160 个问题单。}
 
-\section{教育背景}
+\section{\heiti 教育背景}
 \cventry{2002-2005}{计算机科学与技术硕士}{武汉理工大学}{}{}{}
 \cventry{1993-1997}{建筑工程学士}{汕头大学}{}{}{}
 
-\section{相关技能}
+\section{\heiti 相关技能}
+%\textcolor{color1}
 \cvcomputer{语言}{C/C++, Python, Objective C, C\#}
            {测试}{GoogleTest, Cpputest}
 \cvcomputer{SCM}{Perforce, Git}
