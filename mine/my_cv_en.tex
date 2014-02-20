@@ -5,7 +5,7 @@
 \moderncvcolor{orange}
 
 % 字符编码
-\usepackage[noindent,UTF8]{ctex}
+%\usepackage[noindent,UTF8]{ctex}
 \usepackage{amssymb}
 
 % 调整页面
@@ -23,8 +23,8 @@
   \cvdoubleitem{\textbf{#1}}{\small\raggedright#2}{\textbf{#3}}{\small\raggedright#4}}
 
 % 个人信息
-\firstname{周}
-\familyname{瑜}
+\firstname{Jun}
+\familyname{Chen}
 \title{Write clean code}
 %\myquote{Write clean code}{}
 \mobile{+86~13361970595}
@@ -40,14 +40,14 @@
 \begin{document}
 \maketitle
 
-\section{\heiti 工作背景}
-\cventry{2005.6-现在}{Autodesk公司}{PSEB部门}{高级软件开发工程师}{}{}
-\cventry{\footnotesize{2003.10-2004.3}}{华为技术有限公司}{BMS固网网管部IP项目组}{软件开发工程师}{}{}
+\section{Work Experience}
+\cventry{2005.6-Now}{Autodesk, Inc}{PSEB Dept}{Senior SDE}{}{}
+\cventry{\footnotesize{2003.10-2004.3}}{Huawei Technologies Co. Ltd}{BMS Dept}{SDE}{}{}
 
 \vspace*{0.3\baselineskip}
 
-\section{\heiti 项目经历}
-\cventry{2013.4-2013.11}{AutoCAD - In canvas UI}{C++}{}{}{
+\section{Project Experience}
+\cventry{2013.4-2013.11}{AutoCAD - In cavas UI}{C++}{}{}{
 %\begin{enumerate}
 %\item LMG-156: User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command
 %\item LMG-157: User sees cursor been replaced when using PAN/3DPAN command
@@ -55,11 +55,16 @@
 %\item LMG-464: when creating a line/Mline/Pline/Spline, user can preview the exact properties during creation. (Part 
 %of the work)
 %\end{enumerate}
-更新绘图区的UI，让用户获得更佳的交互体验。
+%更新绘图区的UI，让用户获得更佳的交互体验。
+Update the UI in the canvas area to enhance the interaction experience.
 \begin{itemize}
-\item 更新ZOOM/3DZOOM, PAN/3DPAN命令的Cursor Badge。
-\item 创建Line/MLine/Pline/Spline时候，做到所见即所得。
-\item 测试CommandPreview功能对性能的影响。
+%\item 更新ZOOM/3DZOOM, PAN/3DPAN命令的Cursor Badge。
+%\item 创建Line/MLine/Pline/Spline时候，做到所见即所得。
+%\item 测试CommandPreview功能对性能的影响。
+\item User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command.
+\item User sees cursor been replaced when using PAN/3DPAN command.
+\item CommandPreview Benchmark.
+\item When creating a Line/Mline/Pline/Spline, user can preview the exact properties during creation.
 \end{itemize}
 }
 
@@ -73,34 +78,34 @@
 %\item Add new controls for the visual styles on the tool palette.
 %\item Fix bugs related to VSM, roundtrip and per-obj visual style.
 %\end{enumerate}
-Visual Style指AutoCAD中实体的显示效果，比如Wireframe或者Realistic等。
+Visual Style controls the visual effects of the entities in AutoCAD. There as some predefined styles such as Wireframe, Realistic, etc.
 \begin{itemize}
-\item 维护预定义的Visual Styles，比如DB读写，属性更新等。
-\item 更新Visual Style Manager来显示所有Visual Style的图标。
-\item 修改和Visual Style Manager相关的系列Bugs。
+\item Maintain the predefined visual styles, such as adding new visual styles and updating the property values.
+\item Maintain the visual style swatchs on visual styles manager (VSM).
+\item Fix bugs related to VSM, roundtrip and per-obj visual style.
 \end{itemize}
 }
 
 \vspace*{0.3\baselineskip}
 
 \cventry{2006.4-2010.11}{AutoCAD MEP - Tool based UI}{C++, MFC, COM/ATL}{}{}
-{更新MEP产品的界面。采用COM/ATL, ActiveX等技术，将基于MFC对话框的界面更新成基于COM接口的界面,保证整个AutoCAD产品界面风格的统一。担任技术负责人。}
+{The feature is to enhance the user interface of the application. Lots of traditional technologies in Windows platform are used, such as COM/ATL, MFC, and ActiveX. I enjoyed the component technology in this product greatly.}
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2003.10-2004.3}{网管软件N2000}{C++, ACE, SQL Server}{}{}{负责VLAN后台模块的设计维护工作，工作包括编写概要设计文档，编码，单元测试，代码检视，验证，处理问题单等。后台采用ACE作为底层通信模块，跨平台。在本项目中我大约编写了 8000 行的 C++代码，处理了 160 个问题单。}
+\cventry{2003.10-2004.3}{Network Manamement System N2000}{C++, ACE, SQL Server}{}{}{Maintain the background VLAN module of the product N2000. The background modules use ACE as the base framework. The source code is cross-platform, which can be compiled and linked in both Windows and Solaris.}
 
-\section{\heiti 教育背景}
-\cventry{2002-2005}{计算机科学与技术硕士}{武汉理工大学}{}{}{}
-\cventry{1993-1997}{建筑工程学士}{汕头大学}{}{}{}
+\section{Education}
+\cventry{2002-2005}{Computer Science and Technology}{Wuhan University of Technology}{}{}{}
+\cventry{1993-1997}{Building Engineering}{Shantou University}{}{}{}
 
-\section{\heiti 相关技能}
+\section{Skills}
 %\textcolor{color1}
-\cvcomputer{语言}{C/C++, Python, Objective C, C\#}
-           {测试}{GoogleTest, Cpputest}
+\cvcomputer{Language}{C/C++, Python, Objective C, C\#}
+           {Unit Test}{GoogleTest, Cpputest}
 \cvcomputer{SCM}{Perforce, Git}
-           {编辑}{XCode, VS, Sublime Text}
+           {Editor}{XCode, VS, Sublime Text}
 \cvcomputer{OS}{Windows, Mac OS X, Ubuntu}
-           {其他}{Scrum, CMake, Markdown, \LaTeX{}}
-\cvcomputer{英语}{CET-6}{}{}
+           {Other}{Scrum, CMake, Markdown, \LaTeX{}}
+\cvcomputer{English}{CET-6}{}{}
 \end{document}
