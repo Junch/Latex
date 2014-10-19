@@ -1,0 +1,99 @@
+%\documentclass[UTF8,adobefonts]{article}
+\documentclass[UTF8,adobefonts,a4paper]{ctexart}
+\usepackage{geometry}
+\geometry{left=1cm,right=1cm,top=2.5cm,bottom=2.5cm}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+
+\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.9}
+
+\begin{document}
+\setlength{\parindent}{0em}
+分析Callstack
+
+{\small\texttt
+\\
+00000001`3f961230 48895c2408      mov     qword ptr [rsp+8],rbx\\
+00000001`3f961235 48896c2410      mov     qword ptr {\color{blue}[rsp+10h],rbp}\\
+00000001`3f96123a 4889742418      mov     qword ptr \fbox{[rsp+18h],rsi}\\
+00000001`3f96123f 48897c2420      mov     qword ptr \fbox{[rsp+20h],rdi}\\
+00000001`3f96123f 48897c2420      mov     qword ptr \colorbox{yellow}{[rsp+20h],rdi}
+}
+
+\small
+\begin{lstlisting}[language={[x86masm]Assembler}, 
+							backgroundcolor=\color{lightlightgray},
+                            keywordstyle=\color{blue}, basicstyle=\ttfamily, basicstyle=\footnotesize, frame=single, escapeinside={/@}{@/}]
+0:000> u example!main example!main+0x5b
+example!main [d:\github\debug\training\x64\example.cpp @ 49]:
+00000001`3f961230 48895c2408      mov     qword ptr [rsp+8],rbx
+00000001`3f961235 48896c2410      mov     qword ptr [rsp+10h],rbp
+00000001`3f96123a 4889742418      mov     qword ptr [rsp+18h],rsi
+00000001`3f96123f 48897c2420      mov     qword ptr [rsp+20h],rdi
+00000001`3f961244 4156            /@\textbf{push}@/    /@\textbf{r14}@/
+00000001`3f961246 4883ec30        sub     rsp,30h
+00000001`3f96124a e8f9000000      call    example!rand (00000001`3f961348)
+00000001`3f96124f 448bf0          /@\colorbox{yellow}{mov\hspace{3em}r14d,eax}@/
+00000001`3f961252 e8f1000000      call    example!rand (00000001`3f961348)
+00000001`3f961257 8be8            mov     ebp,eax
+00000001`3f961259 e8ea000000      call    example!rand (00000001`3f961348)
+00000001`3f96125e 8bf0            /@\fbox{mov\hspace{3em}esi,eax}@/
+00000001`3f961260 e8e3000000      call    example!rand (00000001`3f961348)
+00000001`3f961265 8bf8            mov     edi,eax
+00000001`3f961267 e8dc000000      call    example!rand (00000001`3f961348)
+00000001`3f96126c 8bd8            mov     ebx,eax
+00000001`3f96126e e8d5000000      call    example!rand (00000001`3f961348)
+00000001`3f961273 448bcf          mov     r9d,edi
+00000001`3f961276 89442428        mov     dword ptr [rsp+28h],eax
+00000001`3f96127a 448bc6          mov     r8d,esi
+00000001`3f96127d 8bd5            mov     edx,ebp
+00000001`3f96127f 418bce          mov     ecx,r14d
+00000001`3f961282 895c2420        mov     dword ptr [rsp+20h],ebx
+00000001`3f961286 e87afdffff      call    example!ILT+0(?FunctionWith6ParamsYAXHHHHHHZ) (00000001`3f961005)
+\end{lstlisting}
+
+试试C++语言
+\begin{lstlisting}[language={[ANSI]C++}, showstringspaces=false]
+int main(int argc, char ** argv)
+{
+    printf("Hello world!\n");
+
+    return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language={[ANSI]C++}, escapeinside=\`\`]
+int main(int argc, char ** argv)
+{
+    printf("Hello world!\n");
+    `\textbf{ABCDE}`
+	const_cast<T>(`\it{exception}`)
+
+    return 0;
+}
+\end{lstlisting}
+
+\lstset{ %
+	language=python,
+	numbers=left,
+	frame=single,
+	showstringspaces=true,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue}\ttfamily\textbf,
+	identifierstyle=\color{magenta}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{cyan}\ttfamily\textit
+}
+
+\begin{lstlisting}
+# Hello world
+def Hello():
+    foo = 10
+	print "Hello World!"
+\end{lstlisting}
+
+\end{document}
