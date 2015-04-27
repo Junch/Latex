@@ -28,10 +28,10 @@
 \title{Write clean code}
 %\myquote{Write clean code}{}
 \mobile{+86~13361970595}
-\email{junc76@gmail.com}
+\email{chenjun\_76@163.com}
 \homepage{junch.github.io}
 \photo[64pt][0pt]{portrait.png}  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度
-\quote{\footnotesize Last updated: \today}
+%\quote{\footnotesize Last updated: \today}
 \nopagenumbers{}  
 
 %----------------------------------------------------------------------------------
@@ -41,13 +41,25 @@
 \maketitle
 
 \section{Work Experience}
-\cventry{2005.6-Now}{Autodesk, Inc}{PSEB Dept}{Senior SDE}{}{}
+\cventry{\footnotesize{2005.6-Now}}{Autodesk, Inc}{PSEB Dept}{Senior SDE}{}{}
 \cventry{\footnotesize{2003.10-2004.3}}{Huawei Technologies Co. Ltd}{BMS Dept}{SDE}{}{}
 
 \vspace*{0.3\baselineskip}
 
 \section{Project Experience}
-\cventry{2013.4-2013.11}{AutoCAD - In cavas UI}{C++}{}{}{
+\cventry{\footnotesize{2013.12-2015.4}}{AutoCAD - Development Support}{Windbg, C++, C\#}{}{}{
+\begin{itemize}
+\item Utilize windbg to analyze the dump files from users. Help developers locate bugs.
+\item Maintain the CER Report website. Monitor the crashes from users.
+\item Utilize Sonar to analyze the C++/C\# code statically. Help improve the code quality.
+\item Integrate components to AutoCAD.
+\item Maintain the Dwg/Dgn translator. Add regress tests and fix bugs.
+\end{itemize}
+}
+
+\vspace*{0.3\baselineskip}
+
+\cventry{\footnotesize{2013.4-2013.11}}{AutoCAD - In cavas UI}{C++}{}{}{
 %\begin{enumerate}
 %\item LMG-156: User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command
 %\item LMG-157: User sees cursor been replaced when using PAN/3DPAN command
@@ -70,7 +82,7 @@ Update the UI in the canvas area to enhance the interaction experience.
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2011.4-2012.11}{AutoCAD - Visual Style}{C++, WPF}{}{}{
+\cventry{\footnotesize{2011.4-2012.11}}{AutoCAD - Visual Style}{C++, WPF}{}{}{
 %\begin{enumerate}
 %\item Maintain the predefined visual styles, such as adding new visual styles and updating the property values.
 %\item Maintain the visual style swatchs on VSM.
@@ -88,24 +100,25 @@ Visual Style controls the visual effects of the entities in AutoCAD. There as so
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2006.4-2010.11}{AutoCAD MEP - Tool based UI}{C++, MFC, COM/ATL}{}{}
+\cventry{\footnotesize{2006.4-2010.11}}{AutoCAD MEP - Tool based UI}{C++, MFC, COM/ATL}{}{}
 {The feature is to enhance the user interface of the application. Lots of traditional technologies in Windows platform are used, such as COM/ATL, MFC, and ActiveX. I enjoyed the component technology in this product greatly.}
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2003.10-2004.3}{Network Manamement System N2000}{C++, ACE, SQL Server}{}{}{Maintain the background VLAN module of the product N2000. The background modules use ACE as the base framework. The source code is cross-platform, which can be compiled and linked in both Windows and Solaris.}
+\cventry{\footnotesize{2003.10-2004.3}}{Network Manamement System N2000}{C++, ACE, SQL Server}{}{}{Maintain the background VLAN module of the product N2000. The background modules use ACE as the base framework. The source code is cross-platform, which can be compiled and linked in both Windows and Solaris.}
 
 \section{Education}
-\cventry{2002-2005}{Computer Science and Technology}{Wuhan University of Technology}{}{}{}
-\cventry{1993-1997}{Building Engineering}{Shantou University}{}{}{}
+\cventry{\footnotesize{2002.9-2005.4}}{Computer Science and Technology}{Wuhan University of Technology}{}{}{}
+\cventry{\footnotesize{1993.9-1997.7}}{Building Engineering}{Shantou University}{}{}{}
 
 \section{Skills}
 %\textcolor{color1}
 \cvcomputer{Language}{C/C++, Python, Objective C, C\#}
            {Unit Test}{GoogleTest, Cpputest}
-\cvcomputer{SCM}{Perforce, Git}
+\cvcomputer{SCM}{Perforce, TFS, Git, Cpputest}
            {Editor}{XCode, VS, Sublime Text}
 \cvcomputer{OS}{Windows, Mac OS X, Ubuntu}
-           {Other}{Scrum, CMake, Markdown, \LaTeX{}}
-\cvcomputer{English}{CET-6}{}{}
+           {Debug}{VS, Windbg, DebugView}
+\cvcomputer{Other}{Scrum, CMake, Markdown, \LaTeX{}}
+           {English}{CET-6}{}{}
 \end{document}

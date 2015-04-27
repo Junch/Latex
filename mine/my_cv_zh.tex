@@ -23,15 +23,15 @@
   \cvdoubleitem{\textbf{#1}}{\small\raggedright#2}{\textbf{#3}}{\small\raggedright#4}}
 
 % 个人信息
-\firstname{周}
-\familyname{瑜}
+\firstname{陈}
+\familyname{俊}
 \title{Write clean code}
 %\myquote{Write clean code}{}
 \mobile{+86~13361970595}
-\email{junc76@gmail.com}
+\email{chenjun\_76@163.com}
 \homepage{junch.github.io}
 \photo[64pt][0pt]{portrait.png}  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度
-\quote{\footnotesize Last updated: \today}
+%\quote{\footnotesize Last updated: \today}
 \nopagenumbers{}  
 
 %----------------------------------------------------------------------------------
@@ -41,13 +41,33 @@
 \maketitle
 
 \section{\heiti 工作背景}
-\cventry{2005.6-现在}{Autodesk公司}{PSEB部门}{高级软件开发工程师}{}{}
+\cventry{\footnotesize{2005.6-至今}}{Autodesk公司}{PSEB部门}{高级软件开发工程师}{}{}
 \cventry{\footnotesize{2003.10-2004.3}}{华为技术有限公司}{BMS固网网管部IP项目组}{软件开发工程师}{}{}
 
 \vspace*{0.3\baselineskip}
 
 \section{\heiti 项目经历}
-\cventry{2013.4-2013.11}{AutoCAD - In canvas UI}{C++}{}{}{
+
+\cventry{\footnotesize{2013.12-2015.4}}{AutoCAD}{开发支持}{Windbg, C++, C\#}{}{
+%\begin{enumerate}
+%\item LMG-156: User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command
+%\item LMG-157: User sees cursor been replaced when using PAN/3DPAN command
+%\item LMG-457: CommandPreview Benchmark
+%\item LMG-464: when creating a line/Mline/Pline/Spline, user can preview the exact properties during creation. (Part 
+%of the work)
+%\end{enumerate}
+\begin{itemize}
+\item 使用windbg等工具分析dump文件，帮助开发人员定位程序bug。
+\item 维护CER Report的后台程序，监控程序崩溃数据。
+\item 利用Sonar来静态分析C++, C\#代码的质量。
+\item 集成其他部门的组件到AutoCAD。
+\item 维护dwg/dgn图形文件相互转换的代码，加入regress测试。
+\end{itemize}
+}
+
+\vspace*{0.3\baselineskip}
+
+\cventry{\footnotesize{2013.4-2013.11}}{AutoCAD}{In canvas UI}{C++}{}{
 %\begin{enumerate}
 %\item LMG-156: User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command
 %\item LMG-157: User sees cursor been replaced when using PAN/3DPAN command
@@ -65,7 +85,7 @@
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2011.4-2012.11}{AutoCAD - Visual Style}{C++, WPF}{}{}{
+\cventry{\footnotesize{2011.4-2012.11}}{AutoCAD}{Visual Style}{C++, WPF}{}{
 %\begin{enumerate}
 %\item Maintain the predefined visual styles, such as adding new visual styles and updating the property values.
 %\item Maintain the visual style swatchs on VSM.
@@ -83,24 +103,26 @@ Visual Style指AutoCAD中实体的显示效果，比如Wireframe或者Realistic�
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2006.4-2010.11}{AutoCAD MEP - Tool based UI}{C++, MFC, COM/ATL}{}{}
+\cventry{\footnotesize{2006.4-2010.11}}{AutoCAD MEP}{Tool based UI}{C++, MFC, COM/ATL}{}
 {更新MEP产品的界面。采用COM/ATL, ActiveX等技术，将基于MFC对话框的界面更新成基于COM接口的界面,保证整个AutoCAD产品界面风格的统一。担任技术负责人。}
 
 \vspace*{0.3\baselineskip}
 
-\cventry{2003.10-2004.3}{网管软件N2000}{C++, ACE, SQL Server}{}{}{负责VLAN后台模块的设计维护工作，工作包括编写概要设计文档，编码，单元测试，代码检视，验证，处理问题单等。后台采用ACE作为底层通信模块，跨平台。在本项目中我大约编写了 8000 行的 C++代码，处理了 160 个问题单。}
+\cventry{\footnotesize{2003.10-2004.3}}{网管软件N2000}{VLAN}{C++, ACE, SQL Server}{}
+{负责VLAN后台模块的设计维护工作，工作包括编写概要设计文档，编码，单元测试，代码检视，验证，处理问题单等。后台采用ACE作为底层通信模块，跨平台。在本项目中我大约编写了 8000 行的 C++代码，处理了 160 个问题单。}
 
 \section{\heiti 教育背景}
-\cventry{2002-2005}{计算机科学与技术硕士}{武汉理工大学}{}{}{}
-\cventry{1993-1997}{建筑工程学士}{汕头大学}{}{}{}
+\cventry{\footnotesize{2002.9-2005.4}}{计算机科学与技术硕士}{武汉理工大学}{}{}{}
+\cventry{\footnotesize{1993.9-1997.7}}{建筑工程学士}{汕头大学}{}{}{}
 
 \section{\heiti 相关技能}
 %\textcolor{color1}
 \cvcomputer{语言}{C/C++, Python, Objective C, C\#}
            {测试}{GoogleTest, Cpputest}
-\cvcomputer{SCM}{Perforce, Git}
+\cvcomputer{SCM}{Perforce, TFS, Git, SourceTree}
            {编辑}{XCode, VS, Sublime Text}
 \cvcomputer{OS}{Windows, Mac OS X, Ubuntu}
-           {其他}{Scrum, CMake, Markdown, \LaTeX{}}
-\cvcomputer{英语}{CET-6}{}{}
+           {调试}{VS, Windbg, DebugView}
+\cvcomputer{其他}{Scrum, CMake, Markdown, \LaTeX{}}
+	  {英语}{CET-6}
 \end{document}
