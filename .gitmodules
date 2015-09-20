@@ -4,3 +4,6 @@
 [submodule "pages"]
 	path = pages
 	url = https://github.com/tzengyuxio/pages.git
+[submodule "pandoc_demo"]
+	path = pandoc_demo
+	url = https://github.com/zzhi191/pandoc_demo.git
