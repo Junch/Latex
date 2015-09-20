@@ -1,0 +1,3 @@
+[submodule "markdown_slide"]
+	path = markdown_slide
+	url = https://github.com/adayone/markdown_slide.git
