@@ -1,3 +1,6 @@
 [submodule "markdown_slide"]
 	path = markdown_slide
 	url = https://github.com/adayone/markdown_slide.git
+[submodule "pages"]
+	path = pages
+	url = https://github.com/tzengyuxio/pages.git
