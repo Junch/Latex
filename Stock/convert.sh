@@ -1,5 +1,5 @@
 
-pandoc calculate_profit.md -o calculate_profit.pdf --smart --template=pm-template --latex-engine=xelatex -V mainfont='STHeiti'
+pandoc profit1.md -o profit1.pdf --smart --template=pm-template --latex-engine=xelatex -V mainfont='STHeiti'
 
 # brew cask install pandoc
 # brew cask install basictex
@@ -7,6 +7,7 @@ pandoc calculate_profit.md -o calculate_profit.pdf --smart --template=pm-templat
 # touch .bash_profile
 # vi .bash_profile
 # export PATH=/usr/texbin:"$PATH"
+# source ~/.bash_profile
 
 # sudo tlmgr --self --all update
 # sudo tlmgr install titling
