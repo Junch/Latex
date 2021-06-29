@@ -5,7 +5,7 @@
 \moderncvcolor{orange}
 
 % 字符编码
-\usepackage[noindent,UTF8]{ctex}
+\usepackage{ctex}
 \usepackage{amssymb}
 
 % 调整页面
@@ -13,6 +13,9 @@
 \geometry{left=2cm,right=2cm,top=2cm,bottom=1cm}  %设置 上、左、下、右 页边距
 %\usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}
+
+\ctexset{autoindent=0}
+% \listfiles
 
 % Refine quote 
 %\newcommand*{\myquote}[2]{%
@@ -25,13 +28,18 @@
 % 个人信息
 \firstname{陈}
 \familyname{俊}
-\title{Write clean code}
+\title{软件开发工程师}
 %\myquote{Write clean code}{}
 \mobile{+86~13361970595}
 \email{chenjun\_76@163.com}
 \homepage{junch.github.io}
 \photo[64pt][0pt]{portrait.png}  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度
 %\quote{\footnotesize Last updated: \today}
+
+\quote{\begin{flushleft}
+作为软件开发工程师，我的座右铭是{\textbf{write clean code}}。长期在windows环境下编写测试{\small C++}代码，擅长windows环境下的调试，dump文件分析。对于跨平台软件开发，多线程编程也有相当经验。
+\end{flushleft}}
+
 \nopagenumbers{}  
 
 %----------------------------------------------------------------------------------
@@ -41,14 +49,31 @@
 \maketitle
 
 \section{\heiti 工作背景}
-\cventry{\footnotesize{2005.6-至今}}{Autodesk公司}{PSEB部门}{高级软件开发工程师}{}{}
+\cventry{\footnotesize{2016.4-至今}}{思科系统(中国)研发有限公司}{CMBU部门}{软件开发工程师}{}{}
+\cventry{\footnotesize{2005.6-2016.3}}{Autodesk公司}{PSEB部门}{高级软件开发工程师}{}{}
 \cventry{\footnotesize{2003.10-2004.3}}{华为技术有限公司}{BMS固网网管部IP项目组}{软件开发工程师}{}{}
 
 \vspace*{0.3\baselineskip}
 
 \section{\heiti 项目经历}
 
-\cventry{\footnotesize{2013.12-至今}}{AutoCAD}{开发支持}{Windbg, C++, Javascript, C\#}{}{
+\cventry{\footnotesize{2019.10-至今}}{Webex}{ContactService}{C++}{}{
+\begin{itemize}
+  \item 支持搜索Outlook中的联系人。
+  \item 维护基于RESTAPI的一套集成测试。
+  \item 使用Splunk分析数据。
+\end{itemize}
+}
+
+\cventry{\footnotesize{2016.4-至今}}{Cisco Jabber}{ContactService}{C++}{}{
+\begin{itemize}
+  \item 扩展predictive search到webex team cloud用户。
+  \item 维护ContactService，包括bugfix和添加单元测试。
+  \item 维护GSSAPI/SASL/OPENLDAP技术栈，在AD中搜索联系人。
+\end{itemize}
+}
+
+\cventry{\footnotesize{2013.12-2016.3}}{AutoCAD}{开发支持}{Windbg, C++, Javascript, C\#}{}{
 %\begin{enumerate}
 %\item LMG-156: User sees refreshed cursor badge/replacement when using ZOOM/3DZOOM command
 %\item LMG-157: User sees cursor been replaced when using PAN/3DPAN command
@@ -120,7 +145,7 @@ Visual Style指AutoCAD中实体的显示效果，比如Wireframe或者Realistic�
 \section{\heiti 相关技能}
 %\textcolor{color1}
 \cvcomputer{语言}{C/C++, Python, Objective C, C\#, Javascript, PowerShell}
-           {测试}{GoogleTest, Cpputest, Mocha}
+           {测试}{GoogleTest, GMock, Mocha}
 \cvcomputer{SCM}{Perforce, TFS, Git, SourceTree}
            {编辑}{XCode, VS, Sublime Text}
 \cvcomputer{OS}{Windows, Mac OS X, Ubuntu}
