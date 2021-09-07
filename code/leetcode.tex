@@ -1,0 +1,297 @@
+\documentclass{article}
+\usepackage[cache=false]{minted}
+\usepackage{bm}
+\usepackage{geometry}
+\geometry{a4paper,left=2.5cm,right=2cm,top=1.5cm,bottom=1.5cm}
+% \newcommand{\classname}[1]{\texttt{#1}}
+% \newcommand{\classname}[1]{\mintinline{cpp}{#1}}
+
+\usepackage{xcolor}
+\definecolor{light-gray}{gray}{0.85}
+
+\newcommand{\classname}[1]{%
+\colorbox{light-gray}{%
+\parbox[b][0.6em]{\widthof{\mintinline{cpp}{#1}}}{\mintinline{cpp}{#1}}%
+}%
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+% \usepackage{xeCJK}
+% \setCJKmainfont[BoldFont={Adobe Heiti Std}, ItalicFont={Adobe Kaiti Std}]{Adobe Song Std} % 主字体是Adobe宋
+
+
+
+\begin{document}
+
+Given an array nums of distinct integers, return all the possible permutations. You can return the answer in {\bfseries any order}.
+
+\begin{minted}[escapeinside=||]{text}
+|\bf{Input}|: nums = [1,2,3]
+|\bf{Output}|: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+\end{minted}
+\vspace{0.5cm}
+
+\centerline{\bfseries \href{https://leetcode.com/problems/permutations}{LeetCode 46. Permutations}}
+\begin{minted} [frame=lines,framesep=2mm,baselinestretch=1.2,linenos]{cpp}
+vector<vector<int>> permute(vector<int>& nums) {
+    vector<vector<int>> ans;
+    vector<int> path;
+    vector<bool> used(nums.size(), false);
+
+    function<void(void)> dfs = [&]() {
+        if (path.size() == nums.size()) {
+            ans.push_back(path);
+            return;
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (used[i])
+                continue;
+
+            path.push_back(nums[i]);
+            used[i] = true;
+            dfs();
+            path.pop_back();
+            used[i] = false;
+        }
+    };
+
+    dfs();
+    return ans;
+}
+\end{minted}
+
+\clearpage
+
+Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in {\bfseries any order}.
+
+\begin{minted}[escapeinside=||]{text}
+|\bf{Input}|: nums = [1,1,2]
+|\bf{Output}|:
+[[1,1,2],
+ [1,2,1],
+ [2,1,1]]
+\end{minted} 
+
+\vspace{0.5cm}
+
+\centerline{\bfseries \href{https://leetcode.com/problems/permutations-ii}{LeetCode 47. Permutations II}}
+\begin{minted} [frame=lines,framesep=2mm,baselinestretch=1.2,linenos]{cpp}
+vector<vector<int>> permuteUnique(vector<int>& nums) {
+    // https://zxi.mytechroad.com/blog/searching/leetcode-47-permutations-ii/
+    
+    vector<vector<int>> ans;
+    sort(nums.begin(), nums.end());
+    vector<int> path;
+    vector<bool> used(nums.size(), false);
+
+    function<void(void)> dfs = [&]() {
+        if (path.size() == nums.size()) {
+            ans.push_back(path);
+            return;
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (used[i])
+                continue;
+            if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])
+                continue;
+
+            path.push_back(nums[i]);
+            used[i] = true;
+            dfs();
+            path.pop_back();
+            used[i] = false;
+        }
+    };
+
+    dfs();
+    return ans;
+}
+\end{minted}
+
+\clearpage
+
+Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+
+Implement the LRUCache class:
+
+\begin{itemize}
+    \item \classname{LRUCache(int capacity)} Initialize the LRU cache with positive size \classname{capacity}.
+    \item \classname{int get(int key)} Return the value of the \classname{key} if the key exists, otherwise return \classname{-1}.
+    \item \classname{void put(int key, int value)} Update the value of the \classname{key} if the key exists. Otherwise, add 
+          the \classname{key-value} pair to the cache. If the number of keys exceeds the \classname{capacity} from this operation, evict the least recently used key.
+    \item The functions \classname{get} and \classname{put} must each run in \texttt{O(1)} average time complexity.
+\end{itemize}
+\vspace{0.5cm}
+
+\centerline{\bfseries LeetCode \href{https://leetcode.com/problems/lru-cache}{146. LRU Cache O(1)}}
+\begin{minted} [frame=lines,framesep=2mm,baselinestretch=1.2,linenos]{cpp}
+class LRUCache {
+public:
+    LRUCache(int capacity) {
+        capacity_ = capacity;
+    }
+    
+    int get(int key) {
+        const auto it = m_.find(key);
+        // If key does not exist
+        if (it == m_.cend()) return -1;
+ 
+        // Move this key to the front of the cache
+        cache_.splice(cache_.begin(), cache_, it->second);
+        return it->second->second;
+    }
+    
+    void put(int key, int value) {        
+        const auto it = m_.find(key);
+        
+        // Key already exists
+        if (it != m_.cend()) {
+            // Update the value
+            it->second->second = value;
+            // Move this entry to the front of the cache
+            cache_.splice(cache_.begin(), cache_, it->second);
+            return;
+        }
+        
+        // Reached the capacity, remove the oldest entry
+        if (cache_.size() == capacity_) {
+            const auto& node = cache_.back();
+            m_.erase(node.first);
+            cache_.pop_back();
+        }
+        
+        // Insert the entry to the front of the cache and update mapping.
+        cache_.emplace_front(key, value);
+        m_[key] = cache_.begin();
+    }
+private:
+    int capacity_;
+    list<pair<int,int>> cache_;
+    unordered_map<int, list<pair<int,int>>::iterator> m_;
+};
+ 
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
+\end{minted}
+
+\clearpage
+
+\centerline{\bfseries \href{https://leetcode.com/problems/sort-an-array}{LeetCode 912. Sort an Array}}
+Refer to \url{https://zxi.mytechroad.com/blog/algorithms/array/leetcode-912-sort-an-array}
+
+\begin{minted} [frame=lines,framesep=2mm,baselinestretch=1.2,linenos]{cpp}
+class Solution { // QuickSort
+public:
+    vector<int> sortArray(vector<int>& nums)
+    {
+        function<void(int, int)> quickSort = [&](int l, int r) {
+            if (l >= r) return;
+            int i = l;
+            int j = r;
+            int p = nums[l + rand() % (r - l + 1)];
+            while (i <= j) {
+                while (nums[i] < p) ++i;
+                while (nums[j] > p) --j;
+                if (i <= j)
+                    swap(nums[i++], nums[j--]);
+            }
+            quickSort(l, j);
+            quickSort(i, r);
+        };
+
+        quickSort(0, nums.size() - 1);
+        return nums;
+    }
+};
+
+class Solution { // HeapSort
+public:
+    vector<int> sortArray(vector<int>& nums) 
+    {
+        priority_queue<int> q(begin(nums), end(nums));
+        int i = nums.size();
+        while (!q.empty()) {
+            nums[--i] = q.top();
+            q.pop();
+        }
+        return nums;
+    }
+};
+
+class Solution { // HeapSort
+public:
+    vector<int> sortArray(vector<int>& nums)
+    {
+        auto heapify = [&](int i, int e) {
+            while (i <= e) {
+                int l = 2 * i + 1;
+                int r = 2 * i + 2;
+                int j = i;
+                if (l <= e && nums[l] > nums[j])
+                    j = l;
+                if (r <= e && nums[r] > nums[j])
+                    j = r;
+                if (j == i)
+                    break;
+                swap(nums[i], nums[j]);
+                swap(i, j);
+            }
+        };
+
+        const int n = nums.size();
+
+        // Init heap
+        for (int i = n / 2; i >= 0; i--)
+            heapify(i, n - 1);
+
+        // Get min.
+        for (int i = n - 1; i >= 1; i--) {
+            swap(nums[0], nums[i]);
+            heapify(0, i - 1);
+        }
+
+        return nums;
+    }
+};
+
+class Solution { // MergeSort
+public:
+    vector<int> sortArray(vector<int>& nums)
+    {
+        vector<int> t(nums.size());
+        function<void(int, int)> mergeSort = [&](int l, int r) {
+            if (l + 1 >= r)
+                return;
+            int m = l + (r - l) / 2;
+            mergeSort(l, m);
+            mergeSort(m, r);
+            int i1 = l;
+            int i2 = m;
+            int index = 0;
+            while (i1 < m || i2 < r)
+                if (i2 == r || (i1 < m && nums[i1] < nums[i2]))
+                    t[index++] = nums[i1++];
+                else
+                    t[index++] = nums[i2++];
+            std::copy(begin(t), begin(t) + index, begin(nums) + l);
+        };
+
+        mergeSort(0, nums.size());
+        return nums;
+    }
+};
+\end{minted}
+
+\end{document}

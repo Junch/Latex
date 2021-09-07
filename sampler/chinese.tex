@@ -1,0 +1,22 @@
+% !TEX TS-program = xelatex
+
+\documentclass{ctexart}
+\usepackage{xeCJK, fontspec, xunicode, xltxtra}
+\setCJKmainfont[BoldFont={Adobe Heiti Std}, ItalicFont={Adobe Kaiti Std}]{Adobe Song Std} % 主字体是Adobe宋
+\usepackage{enumitem} % 自定义列表
+
+\renewcommand{\baselinestretch}{1.5} \normalsize %只改变行距，默认字体大小不变
+
+\CTEXsetup[name={第,节},number={\chinese{section}}]{section}
+
+\begin{document}
+\section{测试开始}
+这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。这是测试。
+
+{\bf 这是测试。}
+{\it 这是测试。}
+这是Hello World！
+
+\subsection{还是测试}
+\subsubsection{尼玛，还测试啊！}
+\end{document}
