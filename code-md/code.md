@@ -12,8 +12,8 @@ geometry:
 color-links: true
 ---
 
-
-## 151. 翻转字符串里的单词: 
+\newpage
+## 151. 翻转字符串里的单词
 [https://leetcode.com/problems/reverse-words-in-a-string](https://leetcode.com/problems/reverse-words-in-a-string)
 
 ```cpp
@@ -37,5 +37,40 @@ class Solution {
             s.resize(storeIndex);
         }
     };
+}
+```
+
+## 47. Permutations II
+```cpp
+vector<vector<int>> permuteUnique(vector<int>& nums) {
+    // https://zxi.mytechroad.com/blog/searching/leetcode-47-permutations-ii/
+    
+    vector<vector<int>> ans;
+    sort(nums.begin(), nums.end());
+    vector<int> path;
+    vector<bool> used(nums.size(), false);
+
+    function<void(void)> dfs = [&]() {
+        if (path.size() == nums.size()) {
+            ans.push_back(path);
+            return;
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (used[i])
+                continue;
+            if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])
+                continue;
+
+            path.push_back(nums[i]);
+            used[i] = true;
+            dfs();
+            path.pop_back();
+            used[i] = false;
+        }
+    };
+
+    dfs();
+    return ans;
 }
 ```
